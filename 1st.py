@@ -10,7 +10,7 @@ def main():
             for word in line_words:
                 if len(word) > len(big_word):
                     big_word = word
-  fin.close()
+        fin.close()
     print("Longest word : ", big_word)
 
 if __name__ == '__main__':
