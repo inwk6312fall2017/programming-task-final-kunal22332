@@ -1,18 +1,17 @@
+f = ["Book1.txt", "Book2.txt", "Book3.txt"]
 
-f1=open('Book1.txt')
-f2=open('Book2.txt')
-f3=open('Book3.txt')
+def main():
+    big_word = ""
+    for books in f:
+        fin = open(books)
+        for line in fin:
+            line_stripped = line.strip()
+            line_words = line_stripped.split()
+            for word in line_words:
+                if len(word) > len(big_word):
+                    big_word = word
+        fin.close()
+    print("Longest word : ", big_word)
 
-l1 = f1.readlines()
-l2 = f1.readlines()
-#l3= f3.readlines()
-
-string = l1[0]
-strsplit = string.split()
-f1 = []
-for k in strsplit:
-         f1.append(len(k))
-         e = max(f1)
-for m in strsplit:
-         if len(m) == e:
-             print("The longest word is", m, "and it is", len(m,"characters long")
+if __name__ == '__main__':
+    main()
